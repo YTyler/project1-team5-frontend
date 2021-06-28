@@ -1,7 +1,7 @@
-# Project1 Team5 - Front End
+# Project1 Team5 - Back End
 
-Looking for the backend?  
-[Go to backend repository](https://github.com/YTyler/project1-team5-backend)
+Looking for the front end?  
+[Go to front end repository](https://github.com/YTyler/project1-team5-frontend)
 
 ### Deadline - 07/09/2021
 
@@ -33,12 +33,16 @@ Create a social media application utilizing nodejs and react to provide people a
 
 ## Stories
 
-### User 
+### Visitor
+* View posts
+* View Comments
+
+### User
+* ___All Visitor Stories___
 * Make an account
 * Edit its own profile
 * Delete its own profile
-* View posts
-* View Comments
+
 * Comment on posts
 * Create a post
 * Delete its own post
