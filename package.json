@@ -1,0 +1,20 @@
+{
+  "name": "project1-team5-frontend",
+  "version": "1.0.0",
+  "description": "Looking for the front end?  \r [Go to front end repository](https://github.com/YTyler/project1-team5-frontend)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YTyler/project1-team5-frontend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YTyler/project1-team5-frontend/issues"
+  },
+  "homepage": "https://github.com/YTyler/project1-team5-frontend#readme"
+}
