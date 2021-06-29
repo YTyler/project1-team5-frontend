@@ -1,7 +1,7 @@
-# Project1 Team5 - Back End
+# Project1 Team5 - Front End
 
 Looking for the front end?  
-[Go to front end repository](https://github.com/YTyler/project1-team5-frontend)
+[Go to front end repository](https://github.com/YTyler/project1-team5-backend)
 
 ### Deadline - 07/09/2021
 
