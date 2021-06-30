@@ -1,0 +1,64 @@
+html, body{width: 100%; padding: 0; margin: 0}
+#Outer{position: absolute; padding: 1em; border: 1px solid #000}
+.NavBar {
+    background: greenyellow;
+    top: 0%;
+    width: 100%;
+    bottom: 95%;
+}
+
+.MainBody {
+    background: rgb(253, 247, 228);
+    position: sticky;
+    top: 5%;
+    width: 100%;
+    overflow: visible;
+}
+
+.logo {
+    position: relative;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: larger;
+    bottom: 5px;
+}
+
+.userDropdown {
+    position: relative;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: larger;
+    right: 0%;
+    left: 86%;
+    top: -25px;
+
+}
+.Threads {
+    position: relative;
+    margin: auto;
+    width:40%;
+}
+
+#Post {
+
+    list-style: none;
+    border: 3px solid #73AD21;
+    font-family: 'Times New Roman', Times, serif;
+    word-wrap: break-word;
+}
+
+#Title {
+    font-size: xx-large;
+}
+
+#Media {
+    width: 20%;
+    height: 20%;
+    margin: auto;
+}
+
+table, th, td {
+    position: -webkit-sticky;
+    top: 0;
+    background-color: green;
+    border: 2px solid #4CAF50;
+    border-collapse: collapse;
+  }
