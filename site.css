@@ -55,10 +55,14 @@ html, body{width: 100%; padding: 0; margin: 0}
     margin: auto;
 }
 
-table, th, td {
-    position: -webkit-sticky;
-    top: 0;
-    background-color: green;
-    border: 2px solid #4CAF50;
-    border-collapse: collapse;
+table {
+    position: fixed;
+    bottom: 85.5%;
+    left: 10%;
+    width: 300px;
+    border: 3px solid #73AD21;
+  }
+
+  tr {
+    text-align: center;
   }
