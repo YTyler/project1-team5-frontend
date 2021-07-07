@@ -1,11 +1,14 @@
 import React from 'react';
 import { useState } from 'react'
+import { BrowserRouter as Router, Route, useLocation} from 'react-router-dom'
 import Header from './components/Header';
 import Threads from './components/Threads';
 import AddUser from './components/AddUser';
 import LogUser from './components/LogUser';
 import AddThread from './components/AddThread';
 import LogHeader from './components/LogHeader';
+import Footer from './components/Footer';
+import About from './components/About';
 
 
 function App() {
@@ -14,6 +17,7 @@ function App() {
   const [showAddThread, setShowAddThread] = useState(false)
   const [showAuth, setShowAuth] = useState(true)
 
+  
 
   const [threads, setThreads] = useState([
     {
@@ -72,6 +76,7 @@ function App() {
 
   console.log([...users])
   return (
+    <Router>
     <div>
       {showAuth ? 
       <Header 
@@ -84,12 +89,20 @@ function App() {
       onAuth={() => setShowAuth(!showAuth)} 
       onLogUser={() => setShowLogUser(!showLogUser)}/>
       }
-      {showAddUser && <AddUser onAdd={addUser}/>}
-      {showLogUser && <LogUser onLog={authUser} onLogUser={() => setShowLogUser(!showLogUser)} onAuth={() => setShowAuth(!showAuth)} />}
-      {showAddThread && <AddThread onAdd={addThread}/>}
-      <Threads threads={threads}/>
       
+      <Route path='/' exact render={(props:any) => (
+        <>
+          {showAddUser && <AddUser onAdd={addUser}/>}
+          {showLogUser && <LogUser onLog={authUser} onLogUser={() => setShowLogUser(!showLogUser)} onAuth={() => setShowAuth(!showAuth)} />}
+          {showAddThread && <AddThread onAdd={addThread}/>}
+          <Threads threads={threads}/>
+        </>
+      )} />
+
+      <Route path='/about' component={About}/>
+      <Footer />
     </div>
+    </Router>
   );
 
   
