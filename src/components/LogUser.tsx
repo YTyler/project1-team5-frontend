@@ -28,7 +28,7 @@ function LogUser({onLog, onAuth, onLogUser}:{onLog:any; onAuth:any; onLogUser:an
             </div>
             <div className='form-control'>
                 <label>Remember Username:</label>
-                <input type='checkbox' checked={remember} value={remember} onChange={(e:any) => setRemember(e.currentTarget.checked)}/>
+                <input type='checkbox' checked={remember} onChange={(e:any) => setRemember(e.currentTarget.checked)}/>
             </div>
 
             <input type='submit' value='Login' className='btn btn-block' onClick={() => {onAuth(); onLogUser()}}/>
