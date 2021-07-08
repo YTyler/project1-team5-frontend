@@ -17,10 +17,6 @@ function App() {
   const [showAddThread, setShowAddThread] = useState(false)
   const [showAuth, setShowAuth] = useState(true)
 
-
-
-
-
   useEffect(() => {
     const getThreads = async () => {
       const threadsFromServer = await fetchThreads()
@@ -37,40 +33,9 @@ function App() {
   }
 
   const [threads, setThreads] = useState<any[]>([])
-    // {
-    //     id: 0,
-    //     type: 'Thread',
-    //     title: 'A Thread',
-    //     description: 'This is a thread about threads.',
-    //     media: '',
-    //     date: 0o6012021,
-    //     author: 'Matt_Otto'
-
-    // },
-    // {
-    //     id: 1,
-    //     type: 'Thread',
-    //     title: 'A Cat',
-    //     description: 'This is a thread about cats.',
-    //     media: '',
-    //     date: 0o6122021,
-    //     author: 'Matt_Otto'
-
-    // }])
 
   const [users, setUsers] = useState<any[]>([])
-    // {
-    //   userName: 'Matt_Otto',
-    //   password: 'PassWord',
-    //   email: 'thisis@anemail.com',
-    //   id: 1,
-    //   profile: {
-    //     displayName: '',
-    //     aboutUser: `He's dumb`,
-    //   }
-    // }
   
-
 
   const addUser = async (user:any) => {
     const res = await fetch('http://localhost:5000/user/', {
@@ -85,10 +50,6 @@ function App() {
 
     setUsers([data, ...users])
 
-
-    // const id = Math.floor(Math.random() * 10000) + 1
-    // const newUser = {id, ...user}
-    // setUsers([...users, newUser])
   }
 
   const authUser = (user:any) => {
@@ -109,8 +70,6 @@ function App() {
 
     setThreads([data, ...threads])
     
-    
-   
   }
 
 
