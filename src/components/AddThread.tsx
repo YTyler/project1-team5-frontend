@@ -13,7 +13,11 @@ function AddThread({onAdd}: {onAdd:any}) {
             alert('Please use a valid title.')
             return
         }
-        onAdd({ title, description, author })
+        const kind = 'thread'
+        const id = Math.floor(Math.random() * 10000) + 1
+        var today = new Date();
+        var date = today.getFullYear()+'_'+(today.getMonth()+1)+'_'+today.getDate();
+        onAdd({ title, description, author, id, kind, date })
 
         setTitle('')
         setDescription('')
@@ -35,7 +39,7 @@ function AddThread({onAdd}: {onAdd:any}) {
                 <input type='text' placeholder='author here' value={author} onChange={(e:any) => setAuthor(e.target.value)}/>
             </div>
 
-            <input type='submit' value='Sign Up' className='btn btn-block'/>
+            <input type='submit' value='Post' className='btn btn-block' onSubmit={onSubmit}/>
         </form>
     )
 }

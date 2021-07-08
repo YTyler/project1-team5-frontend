@@ -8,8 +8,9 @@ function AddUser({onAdd}:{onAdd:any}) {
 
     const onSubmit = (e:any) => {
         e.preventDefault()
-
-        onAdd({ userName, password, email })
+        const kind = 'user'
+        const id = Math.floor(Math.random() * 10000) + 1
+        onAdd({ userName, password, email, id, kind })
 
         setUserName('')
         setPassword('')

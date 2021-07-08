@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Route, useLocation} from 'react-router-dom'
 import Header from './components/Header';
 import Threads from './components/Threads';
@@ -17,49 +17,78 @@ function App() {
   const [showAddThread, setShowAddThread] = useState(false)
   const [showAuth, setShowAuth] = useState(true)
 
+
+
+
+
+  useEffect(() => {
+    const getThreads = async () => {
+      const threadsFromServer = await fetchThreads()
+      setThreads(threadsFromServer)
+    }
+
+    getThreads();
+  }, [])
+
+  const fetchThreads = async () => {
+    const res = await fetch('http://localhost:5000/thread/all')
+    const data = await res.json()
+    return data
+  }
+
+  const [threads, setThreads] = useState<any[]>([])
+    // {
+    //     id: 0,
+    //     type: 'Thread',
+    //     title: 'A Thread',
+    //     description: 'This is a thread about threads.',
+    //     media: '',
+    //     date: 0o6012021,
+    //     author: 'Matt_Otto'
+
+    // },
+    // {
+    //     id: 1,
+    //     type: 'Thread',
+    //     title: 'A Cat',
+    //     description: 'This is a thread about cats.',
+    //     media: '',
+    //     date: 0o6122021,
+    //     author: 'Matt_Otto'
+
+    // }])
+
+  const [users, setUsers] = useState<any[]>([])
+    // {
+    //   userName: 'Matt_Otto',
+    //   password: 'PassWord',
+    //   email: 'thisis@anemail.com',
+    //   id: 1,
+    //   profile: {
+    //     displayName: '',
+    //     aboutUser: `He's dumb`,
+    //   }
+    // }
   
 
-  const [threads, setThreads] = useState([
-    {
-        id: 0,
-        type: 'Thread',
-        title: 'A Thread',
-        description: 'This is a thread about threads.',
-        media: '',
-        date: 0o6012021,
-        author: 'Matt_Otto'
 
-    },
-    {
-        id: 1,
-        type: 'Thread',
-        title: 'A Cat',
-        description: 'This is a thread about cats.',
-        media: '',
-        date: 0o6122021,
-        author: 'Matt_Otto'
+  const addUser = async (user:any) => {
+    const res = await fetch('http://localhost:5000/user/', {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json'
+      },
+      body: JSON.stringify(user)
+    })
 
-    }
-])
+    const data = await res.json()
 
-  const [users, setUsers] = useState([
-    {
-      userName: 'Matt_Otto',
-      password: 'PassWord',
-      email: 'thisis@anemail.com',
-      id: 1,
-      profile: {
-        displayName: '',
-        aboutUser: `He's dumb`,
-      }
-    }
-  ])
+    setUsers([data, ...users])
 
 
-  const addUser = (user:any) => {
-    const id = Math.floor(Math.random() * 10000) + 1
-    const newUser = {id, ...user}
-    setUsers([...users, newUser])
+    // const id = Math.floor(Math.random() * 10000) + 1
+    // const newUser = {id, ...user}
+    // setUsers([...users, newUser])
   }
 
   const authUser = (user:any) => {
@@ -67,10 +96,21 @@ function App() {
       console.log(user);
   }
 
-  const addThread = (thread:any) => {
-    const id = Math.floor(Math.random() * 10000) + 1
-    const newThread = {id, ...thread}
-    setThreads([...threads, newThread])
+  const addThread = async (thread:any) => {
+    const res = await fetch('http://localhost:5000/thread/', {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json'
+      },
+      body: JSON.stringify(thread)
+    })
+
+    const data = await res.json()
+
+    setThreads([data, ...threads])
+    
+    
+   
   }
 
 
