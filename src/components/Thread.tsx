@@ -4,10 +4,12 @@ function Thread({ thread }:{ thread: any}) {
 
 
     return (
-        <div>
-            <h3>{thread.title}</h3>
-            <p>{thread.description}</p>
-            <p>By {thread.author}</p>
+        <div id="Outer">
+            <div className="Threads background" id="Post">
+                <h3 id = "Title">{thread.title}</h3>
+                <p>{thread.description}</p>
+                <p>By: {thread.author}</p>
+            </div>
         </div>
     )
 }

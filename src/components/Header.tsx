@@ -7,7 +7,8 @@ function Header({title, onAddUser, onLogUser, showAUser, showLUser, onAddThread,
     const location = useLocation()
 
     return (
-        <header className='header'>
+        <header className='header NavBar'>
+            <img className="Sylph" id = "logo" src={'/assests/images/SylphLogo.PNG'} alt = "Logo Goes Here"/>
         <h1>{title}</h1>
         {/*<Button color={showThread ? 'red' : 'purple'} text={showThread ? 'Close' : '+'} onClick={onAddThread}/>*/}
         {location.pathname === '/' && <Button color={showLUser ? 'red' : 'green'} text={showLUser ? 'Close' : 'Log In'} onClick={onLogUser}/>}

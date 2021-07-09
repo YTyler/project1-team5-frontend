@@ -4,7 +4,8 @@ import Button from './Button'
 function LogHeader({title, onAddThread, showThread, onAuth, onLogUser} : {title:any; onAddThread: any; showThread: any; onAuth:any ; onLogUser: any}) {
 
     return (
-        <header className='header'>
+        <header className='header NavBar'>
+            <img className="Sylph" id = "logo" src={'/assests/images/SylphLogo.PNG'} alt = "Logo Goes Here"/>
         <h1>{title}</h1>
         <Button color={showThread ? 'red' : 'purple'} text={showThread ? 'Close' : '+'} onClick={onAddThread}/>
         <Button color='red' text='Log Out' onClick={onAuth} />
